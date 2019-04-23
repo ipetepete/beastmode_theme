@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="file:///home/peter/.cache/wal/colors.css">
+  <style>
+    .block{
+      display: inline-block;
+      margin: 10px;
+      width:150px;
+      height: 150px;
+    }
+    .color-name{
+      display: block;
+      padding: 5px;
+    }
+   </style>
+  
+  <title>PyWal Colors</title>
+</head>
+<body>
+ <h1>MotherEffing colors yo!</h1>
+ <div class="block color1" style="background: var(--color1)">
+   <span class="color-name">color1</span>
+ </div>
+ <div class="block color2" style="background: var(--color2)">
+   <span class="color-name">color2</span>
+ </div>
+ <div class="block color3" style="background: var(--color3)">
+   <span class="color-name">color3</span>
+ </div>
+ <div class="block color4" style="background: var(--color4)">
+   <span class="color-name">color4</span>
+ </div>
+ <div class="block color5" style="background: var(--color5)">
+   <span class="color-name">color5</span>
+ </div>
+ <div class="block color6" style="background: var(--color6)">
+   <span class="color-name">color6</span>
+ </div>
+ <div class="block color7" style="background: var(--color7)">
+   <span class="color-name">color7</span>
+ </div>
+ <div class="block color8" style="background: var(--color8)">
+   <span class="color-name">color8</span>
+ </div>
+ <div class="block color9" style="background: var(--color9)">
+   <span class="color-name">color9</span>
+ </div>
+ <div class="block color10" style="background: var(--color10)">
+   <span class="color-name">color10</span>
+ </div>
+ <div class="block color11" style="background: var(--color11)">
+   <span class="color-name">color11</span>
+ </div>
+ <div class="block color12" style="background: var(--color12)">
+   <span class="color-name">color12</span>
+ </div>
+ <div class="block color13" style="background: var(--color13)">
+   <span class="color-name">color13</span>
+ </div>
+ <div class="block color14" style="background: var(--color14)">
+   <span class="color-name">color14</span>
+ </div>
+ <div class="block color15" style="background: var(--color15)">
+   <span class="color-name">color15</span>
+ </div>
+ </body>
+</html>
+<script>
+    var blocks = document.querySelectorAll(".block")
+    for( var i = 0; i<blocks.length;i++){
+      var st = window.getComputedStyle(blocks[i]);
+      var color = st.getPropertyValue('background-color');
+      var rgb = color.match(/[0-9]+/ig);
+      var hex = rgbToHex(rgb[0], rgb[1], rgb[2]);
+      blocks[i].innerHTML += "<span class='color-name'>"+hex+"</span>";
+    }
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
+    function rgbToHex(r, g, b) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+  </script>

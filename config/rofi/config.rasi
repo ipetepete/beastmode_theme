@@ -1,0 +1,145 @@
+configuration {
+	display-drun:    "Activate";
+	display-run:     "Execute";
+  display-calc:    "Calculate";
+	show-icons:      true;	
+	sidebar-mode:    true;
+
+	modi: "window,drun";
+	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter,!Control+Tab";
+	kb-row-up: "Up,Control+p,Control+ISO_Left_Tab,Control+Shift+Tab";
+	kb-row-down: "Down,Control+n,Control+Tab";
+	kb-mode-next: "Shift+Right";
+	kb-mode-previous: "Shift+Left";
+}
+
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+	text-color:                  #d3d7cf;
+	selbg:                       @selected-normal-background;
+	actbg:                       @alternate-active-background;
+	winbg:	             		     #26c6da;
+  normal-foreground:           #ffffff;
+  black:                       #000000;
+  //selected-normal-foreground:  #ff8e2e;
+  //selected-active-foreground:  #ffea00;
+
+	line-margin:                 2;
+	line-padding:                2;
+	separator-style:             "none";
+	hide-scrollbar:              "true";
+	margin:                      0px;
+	padding:                     0px;
+	font:            "Karla Bold 10";
+  spacing: 0;
+}
+
+window {
+	location:	 east;
+	anchor:		 east;
+	x-offset: 0px;
+	height:		 100%;
+	width:		 400px;
+	margin-right: 60px;
+	orientation: horizontal;
+	children:	 [mainbox];
+  padding: 0px;
+}
+
+mainbox {
+	spacing:  0em;
+	padding: 0px;
+	width:200px;
+	children: [ inputbar, listview, sidebar ];
+	expand: true;
+
+}
+
+button { padding: 5px 2px; }
+
+button selected {
+	background-color: @active-background;
+	text-color:       @background-color;
+}
+
+inputbar {
+     children: [ entry ];
+}
+
+textbox-prompt-colon {                                                
+     text-color: inherit;                                              
+     expand: false;                                                    
+     margin: 0 0.3em 0em 0em;
+ }  
+
+listview {
+	spacing: 0em;
+	dynamic: false;
+	cycle:   true;
+  padding: 0px;
+}
+
+element { 
+	padding: 16px;
+	border:  0 0 0 5px solid;
+}
+
+entry {
+	expand:         true;
+	text-color:     @normal-foreground;
+	background-color: #676a6d;
+	vertical-align: 1;
+	padding:        14px;
+	font:            "Karla Bold 13";
+}
+
+element normal.normal {
+	background-color: @normal-background;
+	text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+	background-color: @urgent-background;
+	text-color:       @urgent-foreground;
+}
+
+element normal.active {
+	background-color: @active-background;
+	text-color:       @black;
+}
+
+element selected.normal {
+	background-color: @selected-normal-background;
+	text-color:       @black;
+	padding: 16px;
+	border:           0 0 0 5px solid;
+	border-color:	    @active-foreground;
+}
+
+element selected.urgent {
+	background-color: @selected-urgent-background;
+	text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+	background-color: @selected-active-background;
+	text-color:       @black;
+  border-color:     @alternate-active-foreground;
+}
+
+element alternate.normal {
+	background-color: @normal-background;
+	text-color:       @normal-foreground;
+}
+
+element alternate.urgent {
+	background-color: @urgent-background;
+	text-color:       @urgent-foreground;
+}
+
+element alternate.active {
+	background-color: @active-background;
+	text-color:       @active-foreground;
+}
