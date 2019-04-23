@@ -1,4 +1,6 @@
 # Beastmode Theme for AwesomeWM
+![look1](shot1.png)
+![look2](shot2.png)
 
 ### Dependancies
 - [compton with blur](https://github.com/tryone144/compton)
@@ -22,7 +24,7 @@ I suggest using Xephyr to test the config/settings:(Ctl+Shift to capture keyboar
 
 Run the script `/scripts/setbg.sh` with the full path to your image....
 
-`~/scripts/setbg.sh ~/Pictures/Wallpaper/BeastMode.jpg` - for example
+`~/scripts/setbg.sh ~/Pictures/Wallpaper/hyper-beast.png` - for example
 
 The script will create a pywal scheme, set the wallpaper and tweak the color of the icons in `.config/awesome/themes`
 
